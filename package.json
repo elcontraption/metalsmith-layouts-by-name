@@ -3,7 +3,7 @@
   "description": "A Metalsmith plugin to enable setting layouts without extension, and layouts as `[layoutName]/index.html`.",
   "author": "Darin Reid <darin@elcontraption.com>",
   "repository": "git@github.com:elcontraption/metalsmith-layouts-by-name.git",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
