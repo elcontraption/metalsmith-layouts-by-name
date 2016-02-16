@@ -1,0 +1,21 @@
+{
+  "name": "metalsmith-layouts-by-name",
+  "description": "A Metalsmith plugin to enable setting layouts without extension, and layouts as `[layoutName]/index.html`.",
+  "author": "Darin Reid <darin@elcontraption.com>",
+  "repository": "git@github.com:elcontraption/metalsmith-layouts-by-name.git",
+  "version": "0.1.1",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "eslint src/index.js && mocha"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "metalsmith": "^2.1.0",
+    "mocha": "^2.4.5",
+    "should": "^8.2.1"
+  },
+  "dependencies": {
+    "lodash.defaults": "^4.0.1"
+  }
+}
