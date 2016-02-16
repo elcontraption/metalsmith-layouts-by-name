@@ -11,14 +11,17 @@ $ npm install metalsmith-layouts-by-name
 
 ## Usage
 ```js
+var layouts = require('metalsmith-layouts');
 var layoutsByName = require('metalsmith-layouts-by-name');
 var metalsmith = require('Metalsmith');
 
-metalsmith.use(layoutsByName({
-
-    // Optional: path to your layouts directory, `layouts` by default
-    directory: 'path/to/layouts'
-}));
+// Make sure you add this plugin before metalsmith-layouts:
+metalsmith
+    .use(layoutsByName({
+        // Optional: path to your layouts directory, `layouts` by default
+        directory: 'path/to/layouts'
+    }))
+    .use(layouts());
 ```
 
 Now, if your layout is set like this:
