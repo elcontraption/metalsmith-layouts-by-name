@@ -1,9 +1,6 @@
 # Metalsmith Layouts by Name
 A Metalsmith plugin to enable setting layouts without extension, and layouts as `[layoutName]/index.html`.
 
-## TODO:
-- Add tests
-
 ## Installation
 ```sh
 $ npm install metalsmith-layouts-by-name

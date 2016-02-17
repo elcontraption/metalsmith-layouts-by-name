@@ -12,8 +12,10 @@
   "devDependencies": {
     "eslint": "^1.10.3",
     "metalsmith": "^2.1.0",
+    "metalsmith-layouts": "^1.5.4",
     "mocha": "^2.4.5",
-    "should": "^8.2.1"
+    "should": "^8.2.1",
+    "swig": "^1.4.2"
   },
   "dependencies": {
     "lodash.defaults": "^4.0.1"

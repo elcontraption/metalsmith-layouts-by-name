@@ -1,4 +1,4 @@
-const defaults = require('lodash/defaults');
+const defaults = require('lodash.defaults');
 const fs = require('fs');
 const path = require('path');
 
@@ -12,15 +12,17 @@ module.exports = plugin;
  *     - then checks for `layouts/name/index.html`.
  * - replaces layout attribute accordingly.
  */
-function plugin(opts) {
+function plugin (opts) {
 
-    var opts = defaults(opts || {}, {
+    opts = defaults(opts || {}, {
         directory: 'layouts'
     });
 
     return function (files, metalsmith, done) {
 
-        for (file in files) {
+        opts.directory = path.join(metalsmith._directory, opts.directory);
+
+        for (var file in files) {
             if (files[file].layout) {
                 findAndSetLayout(files, file, files[file]);
             }
@@ -29,8 +31,7 @@ function plugin(opts) {
         done();
     };
 
-    function findAndSetLayout(files, filepath, file) {
-        var layout;
+    function findAndSetLayout (files, filepath, file) {
 
         // Check if the given layout exists
         if (layoutExists(file.layout)) {
@@ -48,6 +49,7 @@ function plugin(opts) {
         // Check for `[layout]/index.html`
         if (layoutExists(path.join(file.layout, 'index.html'))) {
             file.layout = path.join(file.layout, 'index.html');
+            return;
         }
 
         // Allow error if no layout was found
@@ -59,12 +61,11 @@ function plugin(opts) {
      * @param  {String} layout
      * @return {Boolean}
      */
-    function layoutExists(layout) {
+    function layoutExists (layout) {
         try {
             var stat = fs.statSync(path.join(opts.directory, layout));
             return stat.isFile();
-        }
-        catch (e) {
+        } catch (e) {
             return false;
         }
     }
